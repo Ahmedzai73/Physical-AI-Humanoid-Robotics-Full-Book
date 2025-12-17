@@ -1,55 +1,51 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report:
+- Version change: 1.0.0 → 1.1.0
+- Modified principles: Added 6 specific principles for Physical AI & Humanoid Robotics
+- Added sections: Technical Standards, Development Workflow
+- Removed sections: None
+- Templates requiring updates: ✅ Updated
+- Follow-up TODOs: None
+-->
+
+# Physical AI & Humanoid Robotics Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Technical Accuracy and Documentation Standards
+All robotics and AI claims must reference official documentation (ROS 2, NVIDIA Isaac, Gazebo, Unity, OpenAI, etc.) and code samples must be validated in ROS 2 Humble + Gazebo Garden + Isaac Sim environments. This ensures that all content is technically accurate and reproducible for learners at intermediate and advanced levels.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Learn-Simulate-Deploy Pedagogy
+All explanations must follow the "learn → simulate → deploy" pedagogy, where theoretical concepts are immediately followed by practical simulation examples and deployment considerations. This creates a hands-on learning experience that bridges theory with practice in robotics and embodied AI.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Modular Architecture and Reusability
+The book structure must follow Docusaurus MDX conventions with modular architecture enabling integration with Claude Code and structured specs. Each module and chapter should be independently consumable while contributing to the overall learning progression from ROS fundamentals through simulation to Isaac and VLA models.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Reproducible Code and Simulation Environments
+All code examples must be validated in controlled simulation environments (ROS 2 Humble + Gazebo Garden + Isaac Sim) and include clear setup instructions. This ensures that readers can reproduce examples and gain hands-on experience with physical AI and humanoid robotics systems.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Cohesive Learning Progression
+The curriculum must form coherent learning paths: ROS → Simulation → Isaac → VLA, with each module building upon previous knowledge. Each chapter must include learning objectives, code examples, simulation steps, and at least one robotics diagram or flow explanation to support different learning styles.
 
-### [PRINCIPLE_6_NAME]
+### VI. RAG Integration and Content Grounding
+The integrated RAG chatbot must follow OpenAI Agents/ChatKit SDK + FastAPI + Neon Postgres + Qdrant stack and achieve 90%+ grounding accuracy when answering questions using book content. This ensures the chatbot serves as an effective learning companion that accurately reflects the book's content.
 
+## Technical Standards
 
-[PRINCIPLE__DESCRIPTION]
+All robotics and AI implementations must reference official documentation from ROS 2, NVIDIA Isaac, Gazebo, Unity, and OpenAI. Code samples must be validated in ROS 2 Humble + Gazebo Garden + Isaac Sim environments. Terminology must stay consistent across modules (ROS graph, namespaces, URDF, digital twin, VLA models). All MDX content must be exportable to GitHub Pages without breaking builds.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+The project must support four modules with 8-12 chapters each (minimum 40 total chapters). The capstone must detail an end-to-end pipeline: Voice → LLM Planning → ROS 2 Actions → Navigation → Perception → Manipulation, demonstrating the complete physical AI workflow.
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+## Development Workflow
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+Each chapter must include: learning objectives, code examples, simulation steps, and at least one robotics diagram or flow explanation. All code must be tested or validated via Spec-Kit Plus or Claude Code execution sandbox. The book must compile successfully in Docusaurus and deploy on GitHub Pages. The final capstone robot must complete a full Voice-to-Action task in simulation.
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+Development follows the Spec-Kit Plus methodology with clear separation of concerns: specs define requirements, plans outline architecture decisions, and tasks break down implementation into testable units. All changes must reference code precisely and maintain backward compatibility where possible.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+This constitution supersedes all other development practices for the Physical AI & Humanoid Robotics project. All pull requests and reviews must verify compliance with these principles. Any changes to core principles require explicit documentation of rationale and impact assessment. The constitution must be referenced during architectural decision-making and code reviews.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+All architectural decisions that meet significance criteria (long-term consequences, multiple viable options considered, cross-cutting influence) must be documented in Architecture Decision Records (ADRs) following the prescribed format.
+
+**Version**: 1.1.0 | **Ratified**: 2025-12-16 | **Last Amended**: 2025-12-16

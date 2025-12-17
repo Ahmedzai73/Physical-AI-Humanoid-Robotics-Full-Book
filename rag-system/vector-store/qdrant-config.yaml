@@ -1,0 +1,131 @@
+# Qdrant Configuration for Physical AI & Humanoid Robotics Book RAG System
+
+# Service configuration
+service:
+  # Port to run Qdrant on
+  port: 6333
+
+  # Enable HTTPS (set to true in production)
+  enable_https: false
+
+  # API key for authentication (set in production)
+  # api_key: "your-api-key-here"
+
+  # Number of workers for handling requests
+  workers: 4
+
+  # Maximum number of concurrent operations
+  max_request_workers: 4
+
+# Storage configuration
+storage:
+  # Path to store Qdrant data
+  storage_path: "./qdrant_storage"
+
+  # Maximum number of collections
+  max_collection_number: 100
+
+  # Maximum number of segments per collection
+  max_segment_number: 1000
+
+  # Maximum number of points per segment
+  max_point_number_per_segment: 100000
+
+  # Size of vectors cache in bytes
+  vectors_cache_size: 1073741824  # 1GB
+
+# Performance configuration
+performance:
+  # Number of parallel threads for search operations
+  max_parallel_queries: 16
+
+  # Maximum number of search results to cache
+  search_result_cache_capacity: 1000
+
+  # Number of shards for collections (1 for single-node setup)
+  default_shard_number: 1
+
+  # Number of replicas for collections (1 for single-node setup)
+  default_replication_factor: 1
+
+  # Write consistency factor (1 for single-node setup)
+  default_write_consistency_factor: 1
+
+# Optimizations
+optimizations:
+  # Interval for optimizing segments (in seconds)
+  optimizer_config:
+    deleted_threshold: 0.2
+    vacuum_min_vector_number: 1000
+    vacuum_max_segment_number: 10
+    indexing_threshold: 20000
+    flush_interval_sec: 10
+    max_optimization_threads: 1
+
+# Collections configuration
+collections:
+  # Default configuration for new collections
+  default:
+    # Distance metric for vector similarity
+    distance: Cosine
+
+    # Size of vectors (for text-embedding-3-large, it's 1536)
+    vector_size: 1536
+
+    # HNSW (Hierarchical Navigable Small World) index configuration
+    hnsw_config:
+      m: 16          # Number of edges per node in the graph
+      ef_construct: 100  # Construction parameter
+      ef: 50         # Search parameter
+      max_indexing_threads: 0  # Use all available cores
+      on_disk: false  # Keep index in memory for faster access
+
+    # Quantization configuration (optional, for memory optimization)
+    quantization_config:
+      scalar:
+        type: "int8"
+        quantile: 0.99
+        always_ram: true
+
+# Logging configuration
+logging:
+  level: INFO
+  format: json
+  enable_request_logging: true
+
+# Network configuration
+network:
+  # Maximum number of connections
+  max_connections: 1000
+
+  # Maximum number of concurrent requests per connection
+  max_concurrent_requests: 100
+
+  # Request timeout in seconds
+  request_timeout: 30
+
+# API configuration
+api:
+  # Enable REST API (default)
+  enable_rest: true
+
+  # Enable gRPC API
+  enable_grpc: true
+  grpc_port: 6334
+
+  # CORS settings
+  cors:
+    allow_credentials: true
+    allow_origins:
+      - "*"
+    allow_methods:
+      - GET
+      - POST
+      - PUT
+      - DELETE
+      - OPTIONS
+    allow_headers:
+      - "*"
+
+# Performance monitoring
+telemetry_disabled: false

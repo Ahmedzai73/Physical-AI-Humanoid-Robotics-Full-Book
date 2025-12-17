@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p docs/module-3-ai-robot-brain)",
+      "Bash(npm start)",
+      "Bash(npm install)",
+      "Bash(npx docusaurus start)",
+      "Bash(npm install prismjs)"
+    ]
+  }
+}
