@@ -62,8 +62,8 @@ const config = {
       navbar: {
         title: 'Physical AI & Humanoid Robotics',
         logo: {
-          alt: 'Robotics Book Logo',
-          src: 'img/logo.svg',
+          alt: 'Physical AI & Humanoid Robotics Book Logo',
+          src: 'img/logo.png',
         },
         items: [
           {

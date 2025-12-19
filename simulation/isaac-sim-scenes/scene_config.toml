@@ -1,0 +1,76 @@
+# Isaac Sim Scene Configuration for Physical AI & Humanoid Robotics Textbook
+
+# Basic Scene Setup
+# This configuration creates a simple environment for robot simulation
+# Demonstrates key concepts from Module 3: The AI-Robot Brain (NVIDIA Isaac™)
+
+# Physics settings
+[physics]
+gravity = -9.81
+timestep = 0.008  # 120 Hz simulation
+substeps = 1
+
+# Environment settings
+[environment]
+# Ground plane
+ground_plane = true
+ground_plane_size = 10.0
+
+# Lighting
+default_lighting_kit = "Dome"
+dome_light_intensity = 10000
+dome_light_color = [0.8, 0.8, 0.9]
+
+# Camera settings
+[camera]
+resolution = [1920, 1080]
+fov = 60.0
+position = [3.0, 3.0, 2.0]
+target = [0.0, 0.0, 0.0]
+
+# Sample Robot Configuration
+[robot]
+# Simple wheeled robot for demonstration
+robot_type = "differential_drive"
+robot_position = [0.0, 0.0, 0.5]
+robot_orientation = [0.0, 0.0, 0.0, 1.0]  # [x, y, z, w] quaternion
+
+# Robot properties
+wheel_radius = 0.1
+wheel_base = 0.4
+max_linear_velocity = 1.0
+max_angular_velocity = 1.0
+
+# Sensors
+[robot.sensors]
+camera_enabled = true
+camera_resolution = [640, 480]
+lidar_enabled = true
+lidar_range = 10.0
+imu_enabled = true
+
+# Objects in the scene
+[objects]
+# Create some simple obstacles for navigation
+cube_count = 3
+cube_positions = [[2.0, 1.0, 0.5], [-1.5, 2.0, 0.5], [1.0, -2.0, 0.5]]
+cube_sizes = [[0.5, 0.5, 1.0], [0.8, 0.3, 0.6], [0.4, 0.4, 0.8]]
+cube_colors = [[0.8, 0.2, 0.2], [0.2, 0.8, 0.2], [0.2, 0.2, 0.8]]
+
+# Simulation parameters for textbook examples
+[simulation]
+# Enable various Isaac ROS bridges for textbook examples
+enable_ros_bridge = true
+enable_visual_slam = true
+enable_nav2 = true
+
+# Scene annotations for computer vision
+[annotations]
+enable_segmentation = true
+enable_depth = true
+enable_bounding_boxes = true
+
+# Performance settings
+[performance]
+max_prims = 1000
+enable_frustum_culling = true

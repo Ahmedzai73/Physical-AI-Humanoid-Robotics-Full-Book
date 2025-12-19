@@ -1,0 +1,46 @@
+{
+  "robot": {
+    "name": "BasicRobot",
+    "model": "basic_robot_model",
+    "scale": [1.0, 1.0, 1.0],
+    "position": [0.0, 0.0, 0.0],
+    "rotation": [0.0, 0.0, 0.0, 1.0],
+    "material": {
+      "color": [0.0, 0.8, 0.0, 1.0],
+      "metallic": 0.2,
+      "smoothness": 0.5
+    }
+  },
+  "simulation": {
+    "timeStep": 0.02,
+    "gravity": [0, -9.81, 0],
+    "useFixedTimestep": true
+  },
+  "sensors": {
+    "camera": {
+      "enabled": true,
+      "resolution": [640, 480],
+      "fov": 60,
+      "position": [0.2, 0.5, 0.1],
+      "rotation": [0, 0, 0, 1]
+    },
+    "lidar": {
+      "enabled": false,
+      "range": 10.0,
+      "angle_min": -3.14159,
+      "angle_max": 3.14159,
+      "angle_increment": 0.0174533
+    }
+  },
+  "rosBridge": {
+    "enabled": true,
+    "host": "localhost",
+    "port": 9090,
+    "topics": {
+      "cmd_vel": "/cmd_vel",
+      "odom": "/odom",
+      "scan": "/scan",
+      "image": "/camera/image_raw"
+    }
+  }
+}

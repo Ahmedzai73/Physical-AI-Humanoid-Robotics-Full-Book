@@ -10,6 +10,7 @@ dist/
 build/
 *.egg-info/
 
+
 # Docusaurus
 .docusaurus/
 .cache/
@@ -140,3 +141,6 @@ Logs/
 # Isaac Sim specific
 isaac_sim_data/
 isaac_sim_logs/
+
+# Windows specific
+nul

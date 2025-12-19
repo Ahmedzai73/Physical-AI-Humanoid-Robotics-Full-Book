@@ -1,0 +1,109 @@
+# Isaac Sim Scene Configuration for Physical AI & Humanoid Robotics Textbook
+# Module 3: The AI-Robot Brain (NVIDIA Isaac™)
+
+# Physics settings
+[physics]
+gravity = -9.81
+timestep = 0.008  # 120 Hz simulation
+substeps = 1
+solver_type = "TGS"  # Time-stepping Gauss-Seidel solver
+
+# Environment settings
+[environment]
+# Ground plane
+ground_plane = true
+ground_plane_size = 10.0
+
+# Lighting
+default_lighting_kit = "Dome"
+dome_light_intensity = 10000
+dome_light_color = [0.8, 0.8, 0.9]
+
+# Camera settings
+[camera]
+resolution = [1920, 1080]
+fov = 60.0
+position = [3.0, 3.0, 2.0]
+target = [0.0, 0.0, 0.0]
+
+# Robot Configuration
+[robot]
+# Simple wheeled robot for demonstration
+robot_type = "differential_drive"
+robot_position = [0.0, 0.0, 0.5]
+robot_orientation = [0.0, 0.0, 0.0, 1.0]  # [x, y, z, w] quaternion
+
+# Robot properties
+wheel_radius = 0.1
+wheel_base = 0.4
+max_linear_velocity = 1.0
+max_angular_velocity = 1.0
+
+# Sensors
+[robot.sensors]
+camera_enabled = true
+camera_resolution = [640, 480]
+lidar_enabled = true
+lidar_range = 10.0
+imu_enabled = true
+depth_enabled = true
+
+# Objects in the scene
+[objects]
+# Create some simple objects for perception
+cube_count = 3
+cube_positions = [[2.0, 1.0, 0.5], [-1.5, 2.0, 0.5], [1.0, -2.0, 0.5]]
+cube_sizes = [[0.3, 0.3, 0.3], [0.3, 0.3, 0.3], [0.3, 0.3, 0.3]]
+cube_colors = [[0.8, 0.2, 0.2], [0.2, 0.8, 0.2], [0.2, 0.2, 0.8]]
+
+# Walls to create an enclosed environment
+wall_count = 4
+wall_positions = [[0, 5, 1], [0, -5, 1], [-5, 0, 1], [5, 0, 1]]
+wall_sizes = [[10, 0.2, 2], [10, 0.2, 2], [0.2, 10, 2], [0.2, 10, 2]]
+wall_colors = [[0.5, 0.5, 0.5], [0.5, 0.5, 0.5], [0.4, 0.4, 0.4], [0.4, 0.4, 0.4]]
+
+# Simulation parameters for AI/ML training
+[simulation]
+# Enable various Isaac ROS bridges for textbook examples
+enable_ros_bridge = true
+enable_visual_slam = true
+enable_nav2 = true
+
+# Enable synthetic data generation
+enable_synthetic_data = true
+enable_domain_randomization = true
+
+# Scene annotations for computer vision
+[annotations]
+enable_segmentation = true
+enable_depth = true
+enable_bounding_boxes = true
+
+# Performance settings
+[performance]
+max_prims = 1000
+enable_frustum_culling = true
+enable_multi_gpu = false
+
+# AI/ML specific settings
+[ai_ml]
+# Settings for training AI models
+enable_reinforcement_learning = true
+enable_domain_randomization = true
+synthetic_data_ratio = 0.8
+
+# Perception pipeline settings
+[perception]
+enable_vslam = true
+enable_object_detection = true
+enable_pose_estimation = true
+detection_frequency = 10.0
+min_detection_confidence = 0.5
+
+# Navigation settings
+[navigation]
+enable_path_planning = true
+enable_localization = true
+enable_costmap_2d = true
+planner_frequency = 20.0
+controller_frequency = 20.0

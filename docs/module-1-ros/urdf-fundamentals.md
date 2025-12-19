@@ -979,4 +979,4 @@ Proper URDF modeling ensures that your humanoid robot behaves correctly in both 
 
 In the next chapter, we'll explore how to build a complete humanoid robot URDF model and visualize it in RViz. We'll also learn how to control the joints using ROS 2 interfaces.
 
-Continue to Chapter 10: [Building a Full Humanoid URDF + Visualization in RViz](./urdf-visualization.md) to learn about complete robot modeling and visualization.
+Continue to Chapter 10: [Building a Full Humanoid URDF + Visualization in RViz](./rviz-visualization.md) to learn about complete robot modeling and visualization.

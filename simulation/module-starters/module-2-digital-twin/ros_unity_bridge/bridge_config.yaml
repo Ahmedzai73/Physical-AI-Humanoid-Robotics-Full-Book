@@ -1,0 +1,53 @@
+# ROS-Unity Bridge Configuration for Physical AI & Humanoid Robotics Textbook
+# Module 2: The Digital Twin (Gazebo & Unity)
+
+ros_unity_bridge:
+  ros_params:
+    # ROS node parameters
+    node_name: "ros_unity_bridge"
+    use_sim_time: true
+
+  unity_params:
+    # Unity connection parameters
+    unity_host: "localhost"
+    unity_port: 5555
+    unity_timeout: 10.0
+
+  topic_mappings:
+    # ROS to Unity mappings
+    - ros_topic: "/cmd_vel"
+      unity_topic: "/unity/cmd_vel"
+      ros_type: "geometry_msgs/Twist"
+      unity_type: "geometry_msgs/Twist"
+      direction: "ros_to_unity"
+
+    - ros_topic: "/odom"
+      unity_topic: "/unity/odom"
+      ros_type: "nav_msgs/Odometry"
+      unity_type: "nav_msgs/Odometry"
+      direction: "unity_to_ros"
+
+    - ros_topic: "/camera/image_raw"
+      unity_topic: "/unity/camera/image"
+      ros_type: "sensor_msgs/Image"
+      unity_type: "sensor_msgs/Image"
+      direction: "unity_to_ros"
+
+    - ros_topic: "/scan"
+      unity_topic: "/unity/lidar/scan"
+      ros_type: "sensor_msgs/LaserScan"
+      unity_type: "sensor_msgs/LaserScan"
+      direction: "unity_to_ros"
+
+  service_mappings:
+    # ROS to Unity service mappings
+    - ros_service: "/unity/reset_simulation"
+      unity_service: "/unity/reset"
+      ros_type: "std_srvs/Empty"
+      unity_type: "std_srvs/Empty"
+
+  transform_mappings:
+    # Coordinate frame mappings
+    ros_frame: "odom"
+    unity_frame: "world"
+    enable_tf_sync: true

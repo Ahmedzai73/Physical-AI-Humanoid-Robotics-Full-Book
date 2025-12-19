@@ -1,0 +1,24 @@
+/**:
+  ros__parameters:
+    # Basic robot parameters
+    robot_name: "basic_robot"
+    robot_radius: 0.3
+    max_linear_velocity: 0.5
+    max_angular_velocity: 1.0
+
+    # Simulation settings
+    use_sim_time: false
+
+    # Sensor parameters
+    lidar:
+      range_min: 0.1
+      range_max: 10.0
+      angle_min: -3.14159
+      angle_max: 3.14159
+      angle_increment: 0.0174533  # 1 degree
+
+    # Controller parameters
+    controller:
+      linear_scale: 1.0
+      angular_scale: 1.0
+      cmd_vel_timeout: 0.5

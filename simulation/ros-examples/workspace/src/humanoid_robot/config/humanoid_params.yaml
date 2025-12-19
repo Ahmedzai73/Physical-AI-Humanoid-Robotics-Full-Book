@@ -1,0 +1,36 @@
+/**:
+  ros__parameters:
+    # General humanoid robot parameters
+    robot_name: "textbook_humanoid"
+    robot_type: "bipedal"
+
+    # Control parameters
+    control_rate: 100.0
+    max_linear_velocity: 1.0
+    max_angular_velocity: 1.5
+
+    # Balance parameters
+    balance_threshold: 0.3
+    stability_margin: 0.1
+
+    # Joint limits (in radians)
+    joint_limits:
+      hip_min: -1.57
+      hip_max: 1.57
+      knee_min: 0.0
+      knee_max: 2.35
+      ankle_min: -0.78
+      ankle_max: 0.78
+      shoulder_min: -1.57
+      shoulder_max: 1.57
+      elbow_min: 0.0
+      elbow_max: 2.35
+
+    # Sensor parameters
+    imu_topic: "/imu/data"
+    joint_state_topic: "/joint_states"
+    laser_scan_topic: "/scan"
+
+    # Safety parameters
+    safe_distance: 0.5
+    emergency_stop_threshold: 0.8

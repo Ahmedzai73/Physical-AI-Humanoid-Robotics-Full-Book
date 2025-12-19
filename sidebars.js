@@ -7,14 +7,14 @@ const sidebars = {
       type: 'category',
       label: 'Physical AI & Humanoid Robotics',
       items: [
+        'complete-documentation',
         'glossary',
         {
           type: 'category',
           label: 'Module 1: The Robotic Nervous System (ROS 2)',
           items: [
             'module-1-ros/intro',
-            'module-1-ros/overview',
-            'module-1-ros/setup',
+            'module-1-ros/architecture',
             'module-1-ros/nodes',
             'module-1-ros/topics',
             'module-1-ros/services-actions',
@@ -82,13 +82,7 @@ const sidebars = {
           type: 'category',
           label: 'Capstone Project',
           items: [
-            'capstone/intro',
-            'capstone/project-overview',
-            'capstone/system-design',
-            'capstone/implementation',
-            'capstone/testing',
-            'capstone/evaluation',
-            'capstone/conclusion'
+            'capstone/autonomous-humanoid'
           ],
         }
       ],

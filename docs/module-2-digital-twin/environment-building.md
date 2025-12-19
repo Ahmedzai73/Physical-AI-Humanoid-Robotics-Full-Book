@@ -1615,4 +1615,4 @@ For humanoid robots specifically, environments should include:
 
 In the next chapter, we'll explore sensor simulation in Gazebo, learning how to configure realistic sensors for your humanoid robot that provide data equivalent to real-world sensors. We'll cover LiDAR, cameras, IMUs, and other perception systems that are essential for autonomous humanoid operation.
 
-Continue to Chapter 6: [Simulating Sensors: LiDAR, Depth Camera, IMU, RGB Cameras](./sensor-simulation.md) to learn about creating realistic sensor systems for your digital twin.
+Continue to Chapter 6: [Simulating Sensors: LiDAR, Depth Camera, IMU, RGB Cameras](./sensors.md) to learn about creating realistic sensor systems for your digital twin.

@@ -384,7 +384,7 @@ The digital twin approach you've learned provides significant advantages:
 
 ## Next Steps
 
-Proceed to Module 3: [The AI-Robot Brain (NVIDIA Isaac™)](../module-3-ai-brain/intro.md) where you'll learn about advanced perception systems, synthetic data generation, and GPU-accelerated robotics using NVIDIA Isaac Sim. The digital twin foundation you've built here will be essential as you advance to more sophisticated simulation and AI integration capabilities.
+Proceed to Module 3: [The AI-Robot Brain (NVIDIA Isaac™)](../module-3-ai-robot-brain/intro.md) where you'll learn about advanced perception systems, synthetic data generation, and GPU-accelerated robotics using NVIDIA Isaac Sim. The digital twin foundation you've built here will be essential as you advance to more sophisticated simulation and AI integration capabilities.
 
 Your comprehensive understanding of the digital twin pipeline (URDF → Gazebo → ROS → Unity) positions you well to tackle the advanced perception and AI systems in the upcoming modules.
 

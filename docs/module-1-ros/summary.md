@@ -325,6 +325,32 @@ These skills form the foundation for all advanced robotic development. Take time
 
 Remember: Robotics software development is an iterative process. Start simple, test frequently, and gradually add complexity. The modular nature of ROS 2 allows you to develop and test components independently before integrating them into complete systems.
 
+## Cross-Module Integration Notes
+
+### Connection to Module 2 (Digital Twin)
+- The URDF models you created will be imported into Gazebo for physics simulation
+- ROS 2 topics from your nodes will connect to simulated sensors in Gazebo
+- RViz visualization learned in this module extends to Unity HDRP environments
+- Launch files will orchestrate complex multi-environment simulation systems
+
+### Connection to Module 3 (AI-Robot Brain)
+- ROS 2 communication patterns learned here form the backbone of Isaac ROS
+- URDF models are essential for Isaac Sim scene creation
+- Node architecture principles apply to Isaac ROS perception nodes
+- TF transformations are critical for VSLAM and navigation systems
+
+### Connection to Module 4 (VLA)
+- Voice commands will generate ROS 2 messages for robot control
+- Cognitive planning outputs will be implemented as ROS 2 action servers
+- Perception outputs will feed into VLA decision-making systems
+- All communication patterns learned here apply to VLA system integration
+
+### Capstone Integration
+- Your foundational ROS 2 knowledge will connect all system components
+- URDF models will be used across all simulation environments
+- Node communication patterns will tie together perception, planning, and action
+- Launch files will orchestrate the complete autonomous humanoid system
+
 ## Next Steps
 
 Proceed to Module 2: [The Digital Twin (Gazebo & Unity)](../module-2-digital-twin/intro.md) where you'll learn to create physics simulations and digital twins for your robotic systems. The URDF models you've learned to create will come alive in simulation environments!
