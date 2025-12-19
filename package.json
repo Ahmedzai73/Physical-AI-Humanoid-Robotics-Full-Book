@@ -1,6 +1,6 @@
 {
   "name": "physical-ai-humanoid-robotics-book",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A comprehensive textbook covering ROS 2, Digital Twin Simulation, NVIDIA Isaac AI Brain, and Vision-Language-Action Robotics",
   "main": "docusaurus.config.js",
   "directories": {
